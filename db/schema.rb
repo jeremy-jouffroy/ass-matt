@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_153817) do
+ActiveRecord::Schema.define(version: 2019_12_05_143404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days", force: :cascade do |t|
+    t.date "day_date"
+    t.bigint "pay_slip_id"
+    t.string "status"
+    t.time "starting_hour"
+    t.time "ending_hour"
+    t.integer "daily_meal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pay_slip_id"], name: "index_days_on_pay_slip_id"
+  end
+
+  create_table "pay_slips", force: :cascade do |t|
+    t.datetime "month"
+    t.bigint "salary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["salary_id"], name: "index_pay_slips_on_salary_id"
+  end
+
+  create_table "salaries", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "contract_type"
+    t.integer "hourly_rate"
+    t.time "starting_hour"
+    t.time "ending_hour"
+    t.integer "day_per_week"
+    t.boolean "working_on_banks_holliday"
+    t.integer "cleaning_cost"
+    t.integer "meal_cost"
+    t.integer "daily_meals"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_salaries_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +63,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_153817) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "days", "pay_slips"
+  add_foreign_key "pay_slips", "salaries"
+  add_foreign_key "salaries", "users"
 end
