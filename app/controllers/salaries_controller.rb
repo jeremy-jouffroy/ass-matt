@@ -1,4 +1,6 @@
 class SalariesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
   end
 
@@ -6,6 +8,8 @@ class SalariesController < ApplicationController
   end
 
   def new
+    @user = current_user
+
   end
 
   def create
@@ -20,5 +24,6 @@ class SalariesController < ApplicationController
   def destroy
   end
 
-
+  private
+  set_user
 end
