@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'days/index'
+  get 'days/show'
+  get 'days/new'
+  get 'days/edit'
   get 'pay_slips/show'
   get 'pay_slips/new'
   get 'pay_slips/edit'

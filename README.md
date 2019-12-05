@@ -47,5 +47,5 @@ rails generate model Day day_date:date pay_slip:references status:string startin
 
 rails g controller salaries index show new edit
 rails g controller pay_slips show new edit
-rails g contoller days index show new edit
+rails g controller days index show new edit
 
