@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
-  get 'days/index'
-  get 'days/show'
-  get 'days/new'
-  get 'days/edit'
-  get 'pay_slips/show'
-  get 'pay_slips/new'
-  get 'pay_slips/edit'
-  get 'salaries/index'
-  get 'salaries/show'
-  get 'salaries/new'
-  get 'salaries/edit'
   devise_for :users
+  # homepage default
   root to: 'pages#home'
   # resources :pages
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :salaries, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :pay_slips do
+      resources :days
+    end
+  end
+
 end
