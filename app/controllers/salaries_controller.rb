@@ -19,4 +19,6 @@ class SalariesController < ApplicationController
 
   def destroy
   end
+
+
 end

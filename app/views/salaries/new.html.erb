@@ -1,2 +1,11 @@
-<h1>Salaries#new</h1>
-<p>Find me in app/views/salaries/new.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>New Salaries Setup</h1>
+    <%= simple_form_for @salary do |f| %>
+      <%= f.input :username %>
+      <%= f.input :password %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
+
