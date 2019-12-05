@@ -32,14 +32,16 @@ In case of error message related to webpack run an install through
     https://www.figma.com/file/M59MVPfbF2b1418YV9BorB/Untitled?node-id=0%3A1
  
 
-    
-
-
-
-
 ## Calendar proposal
 - gem simple_calendar 
 https://github.com/excid3/simple_calendar
 
 -  node module tui.calendar 
 https://github.com/nhn/tui.jsdoc-template
+
+
+### model generation
+rails generate model Salary user:references contract_type:string hourly_rate:integer starting_hour:time ending_hour:time day_per_week:integer working_on_banks_holliday:boolean cleaning_cost:integer meal_cost:integer daily_meals:integer 
+rails generate model PaySlip month:datetime salary:references
+rails generate model Day day_date:date pay_slip:references status:string starting_hour:time ending_hour:time daily_meal:integer
+
