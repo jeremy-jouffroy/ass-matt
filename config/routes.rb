@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'salaries/index'
+  get 'salaries/show'
+  get 'salaries/new'
+  get 'salaries/edit'
   devise_for :users
   root to: 'pages#home'
   # resources :pages
