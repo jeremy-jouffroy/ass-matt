@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pay_slips/show'
+  get 'pay_slips/new'
+  get 'pay_slips/edit'
   get 'salaries/index'
   get 'salaries/show'
   get 'salaries/new'
