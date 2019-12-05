@@ -19,6 +19,8 @@ gem 'webpacker'
 # calendar gem
 gem "simple_calendar", "~> 2.0"
 
+# money integration in rails
+gem 'money-rails', '~>1.12'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

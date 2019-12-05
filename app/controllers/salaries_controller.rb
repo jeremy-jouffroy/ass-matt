@@ -9,7 +9,7 @@ class SalariesController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @salary = Salary.new(salary_params)
 
   end
 
@@ -26,6 +26,11 @@ class SalariesController < ApplicationController
   end
 
   private
+  def salary_params
+    params.require(:salary).permit(:contract_type,
+
+                                   )
+  end
 
   def set_user
     @user = current_user
