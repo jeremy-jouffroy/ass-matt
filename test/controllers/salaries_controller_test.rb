@@ -12,7 +12,7 @@ class SalariesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get salaries_new_url
+    get new_salary_url
     assert_response :success
   end
 
