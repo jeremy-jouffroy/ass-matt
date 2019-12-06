@@ -1,2 +1,19 @@
-<h1>Salaries#show</h1>
-<p>Find me in app/views/salaries/show.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>Detail of Salary Set Up </h1>
+    <ul>
+      <li><strong>Contract_type</strong> <%= @salary.contract_type %></li>
+      <li><strong>hourly_rate_cents</strong> <%= @salary.hourly_rate_cents %></li>
+      <li><strong>hourly_rate_currency</strong><%= @salary.hourly_rate_currency %></li>
+      <li><strong>starting_hour</strong><%= @salary.starting_hour %></li>
+      <li><strong>ending_hour</strong><%= @salary.ending_hour %></li>
+      <li><strong>day_per_week</strong><%= @salary.day_per_week %></li>
+      <li><strong>working_on_banks_holliday</strong><%= @salary.working_on_banks_holliday %></li>
+      <li><strong>cleaning_cost_cents</strong><%= @salary.cleaning_cost_cents %></li>
+      <li><strong>cleaning_cost_currency</strong><%= @salary.cleaning_cost_currency %></li>
+      <li><strong>meal_cost_cents</strong><%= @salary.meal_cost_cents %></li>
+      <li><strong>meal_cost_currency</strong><%= @salary.meal_cost_currency %></li>
+      <li><strong>daily_meal</strong><%= @salary.daily_meals %></li>
+    </ul>
+  </div>
+</div>

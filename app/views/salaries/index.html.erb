@@ -1,2 +1,17 @@
-<h1>Salaries#index</h1>
-<p>Find me in app/views/salaries/index.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>List of your Salary Setup</h1>
+    <ul>
+      <% @salaries.each do |salary|  %>
+        <li>
+          Contract <%= salary.contract_type %> created on <%= salary.created_at.to_time.strftime('%B %e') %>
+          <%=  link_to "Update", edit_salary_path(salary) %>
+          <%=  link_to "View Detail", salary_path(salary) %>
+          <%=  link_to "view all salary slip", salary_pay_slips_path(salary) %>
+          <%=  link_to "create a new salary slip", new_salary_pay_slip_path(salary) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
