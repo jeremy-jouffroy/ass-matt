@@ -1,6 +1,13 @@
+# Ass Mat
+
 A rails App to calculate precisely how much hours you must declare on https://www.pajemploi.urssaf.fr/ for your "assitante maternelle" (A.K.A super nanny)
 
-#Setup
+##Demo App
+ 
+ https://ass-mat.herokuapp.com/
+
+
+##Setup
 
 Ruby Version : 2.6.3
 Rails version 5.2.2.1
@@ -40,12 +47,4 @@ https://github.com/excid3/simple_calendar
 https://github.com/nhn/tui.jsdoc-template
 
 
-### rails  generation
-rails generate model Salary user:references contract_type:string hourly_rate:integer starting_hour:time ending_hour:time day_per_week:integer working_on_banks_holliday:boolean cleaning_cost:integer meal_cost:integer daily_meals:integer 
-rails generate model PaySlip month:datetime salary:references
-rails generate model Day day_date:date pay_slip:references status:string starting_hour:time ending_hour:time daily_meal:integer
-
-rails g controller salaries index show new edit
-rails g controller pay_slips show new edit
-rails g controller days index show new edit
-
+## testing 
