@@ -27,8 +27,7 @@ class SalariesController < ApplicationController
 
   private
   def salary_params
-    params.require(:salary).permit(:contract_type,
-                                   )
+    params.require(:salary).permit(:contract_type)
   end
 
   def set_user
