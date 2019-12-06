@@ -6,8 +6,15 @@
       <%= f.input  :hourly_rate, input_html: { value: '3.50' } %>
       <%= f.input  :starting_hour %>
       <%= f.input  :ending_hour %>
-      <%= f.input  :day_per_week %>
-      <%= f.input  :working_on_banks_holliday, as: :radio_button, as: :boolean%>
+      <%= f.input  :day_per_week  input_html: { value: '5' }%>
+
+      # fucking boolean
+      <%= f.input  :working_on_banks_holliday,
+                   #as: :radio_button,
+                   boolean_style: :inline
+      %>
+
+
       <%= f.input  :cleaning_cost, input_html: { value: '3.50' } %>
       <%= f.input  :meal_cost, input_html: { value: '3.50' } %>
       <%= f.input  :daily_meals, input_html: { value: '1' } %>

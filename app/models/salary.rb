@@ -1,4 +1,22 @@
-
+# Salary Schema
+# id: integer
+# user_id: integer
+# contract_type: string
+# hourly_rate_cents: integer
+# hourly_rate_currency: string
+# starting_hour: time
+# ending_hour: time
+# day_per_week: integer
+# working_on_banks_holliday: boolean
+# cleaning_cost_cents: integer
+# cleaning_cost_currency: string
+# meal_cost_cents: integer
+# meal_cost_currency: string
+# daily_meals: integer
+# created_at: datetime
+# updated_at: datetime
+# belongs_to :user
+# has_many :pay_slips
 
 class Salary < ApplicationRecord
   belongs_to :user
