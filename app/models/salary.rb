@@ -23,7 +23,7 @@ class Salary < ApplicationRecord
   has_many :pay_slips
 
   #validations
-  validates :contract_type, :hourly_rate_cents, :starting_hour, :ending_hour, :day_per_week, :working_on_banks_holliday,  presence: true
+  validates :contract_type, :hourly_rate_cents, :starting_hour, :ending_hour, :day_per_week,  presence: true
   validates :contract_type, inclusion: { in: %w(mensualisé horaire),  message: "%{value} n'est pas un type de contract valide" }
   # custom validation function
  # validates :starting_hour_is_before_ending_hour

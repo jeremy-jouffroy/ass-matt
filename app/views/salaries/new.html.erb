@@ -2,23 +2,17 @@
   <div class="container">
     <h1>New Salaries Setup</h1>
     <%= simple_form_for @salary do |f| %>
+      <%= f.error_notification %>
       <%= f.input :contract_type, collection: %w(mensualisé horaire), default: "mensualisé"%>
       <%= f.input  :hourly_rate, input_html: { value: '3.50' } %>
       <%= f.input  :starting_hour %>
       <%= f.input  :ending_hour %>
-      <%= f.input  :day_per_week  input_html: { value: '5' }%>
-
-      # fucking boolean
-      <%= f.input  :working_on_banks_holliday,
-                   #as: :radio_button,
-                   boolean_style: :inline
-      %>
-
-
+      <%= f.input  :day_per_week,  input_html: { value: '5' }%>
+      <%= f.input  :working_on_banks_holliday, as: :radio_buttons, wrapper: :vertical_collection_inline ,  input_html: { value: 'false' }%>
       <%= f.input  :cleaning_cost, input_html: { value: '3.50' } %>
       <%= f.input  :meal_cost, input_html: { value: '3.50' } %>
       <%= f.input  :daily_meals, input_html: { value: '1' } %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -12,16 +12,17 @@ class SalariesController < ApplicationController
 
   def new
     @salary = Salary.new()
+    @salary.user = @user
   end
 
   def create
     @salary = Salary.new(salary_params)
     @salary.user = @user
-    if @salary.save
+    if @salary.save!
       redirect_to salary_path(@salary)
     else
-      binding.pry
-      # render :new
+      alert
+      render :new
     end
   end
 
