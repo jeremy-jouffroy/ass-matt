@@ -2,9 +2,25 @@
   <div class="container">
     <h1>New Salaries Setup</h1>
     <%= simple_form_for @salary do |f| %>
-      <%= f.input :user %>
+      <%= f.input :contract_type, collection: %w(mensualisé horaire), default: "mensualisé"%>
+      <%= f.input  :hourly_rate, input_html: { value: '3.50' } %>
+      <%= f.input  :starting_hour %>
+      <%= f.input  :ending_hour %>
+      <%= f.input  :day_per_week %>
+      <%= f.input  :working_on_banks_holliday, as: :radio_button, as: :boolean%>
+      <%= f.input  :cleaning_cost, input_html: { value: '3.50' } %>
+      <%= f.input  :meal_cost, input_html: { value: '3.50' } %>
+      <%= f.input  :daily_meals, input_html: { value: '1' } %>
       <%= f.button :submit %>
     <% end %>
   </div>
 </div>
 
+<!--:hourly_rate_cents,-->
+<!--:starting_hour,-->
+<!--:ending_hour,-->
+<!--:day_per_week,-->
+<!--:working_on_banks_holliday,-->
+<!--:cleaning_cost_cents,-->
+<!--:meal_cost_cents,-->
+<!--:daily_meals-->
