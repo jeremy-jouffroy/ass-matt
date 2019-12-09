@@ -8,6 +8,10 @@ class PaySlipsController < ApplicationController
   end
 
   def show
+
+    @pay_slip = PaySlip.find(params[:id])
+    @date = @pay_slip.month.to_date
+    # @day = Day.new()
   end
 
   def new
