@@ -16,8 +16,9 @@ class PaySlipsController < ApplicationController
 
   def create
     @pay_slip = PaySlip.new(pay_slip_params)
+    @pay_slip.salary = @salary
     if @pay_slip.save!
-      redirect_to salary_pay_slip_path(@salary,@pay_slip)
+      redirect_to salary_pay_slip_path(@salary, @pay_slip)
     else
       alert
       render :new
@@ -35,10 +36,10 @@ class PaySlipsController < ApplicationController
 
   private
   def set_salary_setup
-    @salary = Salary.find(params[:id])
+    @salary = Salary.find(params[:salary_id])
   end
 
   def pay_slip_params
-    params.require(:pay_slip).permit(:month)
+    params.require(:pay_slip).permit(:month,:salary_id)
   end
 end
