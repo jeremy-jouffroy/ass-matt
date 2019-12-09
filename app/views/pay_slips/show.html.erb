@@ -1,2 +1,21 @@
-<h1>PaySlips#show</h1>
-<p>Find me in app/views/pay_slips/show.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>PaySlips#show</h1>
+    <p>Find me in app/views/pay_slips/show.html.erb</p>
+
+    <h2>Some data</h2>
+    <p>
+      Salary : <%= @salary %> <br>
+      Pay slip : <%= @pay_slip %><br>
+      Pay slip month 1st day: <%= @date %> of class <%= @date.class %> <br>
+    </p>
+
+
+    <h2>A calendar</h2>
+    <%= month_calendar  do |date| %>
+      <%= date %>
+    <% end %>
+  </div>
+</div>
+
+
