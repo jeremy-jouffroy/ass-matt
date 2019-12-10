@@ -1,17 +1,22 @@
-<h1>PaySlips#new</h1>
-<p>Find me in app/views/pay_slips/new.html.erb</p>
 <div class="wrapper">
   <div class="container">
-    <h1>New Salaries Setup</h1>
-    <%= simple_form_for [@salary,@pay_slip] do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :month, as: :date %>
-      <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
-  </div>
+    <h1>PaySlips#new</h1>
+    <p>Find me in app/views/pay_slips/new.html.erb</p>
+    <div class="wrapper">
+      <div class="container">
+        <h1>New Salaries Setup</h1>
+        <%= simple_form_for [@salary,@pay_slip] do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :month, as: :date %>
+          <%= f.button :submit, class: "btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+</div>
 </div>
 
-<script>
+
+<script type="text/javascript" charset="utf-8">
   // TODO : make it through a calendar picker instead of a form
    let dDay = document.getElementById('pay_slip_month_3i');
   // hide the day for month it need to be the 1st day of the month

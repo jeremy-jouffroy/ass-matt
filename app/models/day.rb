@@ -12,4 +12,8 @@
 
 class Day < ApplicationRecord
   belongs_to :pay_slip
+
+  validates :status, inclusion: { in: ["worked", "weekend", "paid-leave", "unpaid-leave", "stayed at home"],  message: "%{value} n'est pas un type de contract valide" }
+
+
 end

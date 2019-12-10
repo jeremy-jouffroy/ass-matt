@@ -1,2 +1,42 @@
-<h1>Days#new</h1>
-<p>Find me in app/views/days/new.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>Days#new</h1>
+    <p>Find me in app/views/days/new.html.erb</p>
+
+    <h2><%= @salary %></h2>
+
+
+<!--    @salary.user_id <%#= @salary.user_id  %></br>-->
+<!--    @salary.contract_type<%#= @salary.contract_type %></br>-->
+<!--    @salary.hourly_rate_cents<%#= @salary.hourly_rate_cents %></br>-->
+<!--    @salary.hourly_rate_currency<%#= @salary.hourly_rate_currency %></br>-->
+<!--    @salary.starting_hour <%#= @salary.starting_hour %></br>-->
+<!--    @salary.ending_hour<%#= @salary.ending_hour %></br>-->
+<!--    @salary.day_per_week <%#= @salary.day_per_week %></br>-->
+<!--    @salary.working_on_banks_holliday<%#= @salary.working_on_banks_holliday %></br>-->
+<!--    @salary.cleaning_cost_cents<%#= @salary.cleaning_cost_cents %></br>-->
+<!--    @salary.cleaning_cost_currency<%#= @salary.cleaning_cost_currency %></br>-->
+<!--    @salary.meal_cost_cent<%#= @salary.meal_cost_cents %></br>-->
+<!--    @salary.meal_cost_currency<%#= @salary.meal_cost_currency %></br>-->
+<!--    @salary.daily_meals<%#= @salary.daily_meals %></br>br-->
+
+    <h2><%= @pay_slip %></h2>
+    <%= @pay_slip.month  %> month
+
+
+
+
+
+
+
+    <%= simple_form_for [@salary,@pay_slip,@day] do |f| %>
+      <%= f.error_notification  %>
+      <%= f.input :day_date,  input_html: { value: "2019-12-12" }, as: :hidden%>
+      <%= f.input :status, collection: ["worked", "weekend", "paid-leave", "unpaid-leave", "stayed at home"], default: "worked"%>
+      <%= f.input :starting_hour,  placeholder: @salary.starting_hour, default: @salary.starting_hour %>
+      <%= f.input :ending_hour, placeholder: @salary.ending_hour, default: @salary.ending_hour  %>
+      <%= f.input :daily_meal, placeholder: @salary.daily_meals, default: @salary.daily_meals, input_html: { value: @salary.daily_meals } %>
+      <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>

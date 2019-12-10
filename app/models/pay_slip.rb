@@ -8,4 +8,5 @@
 
 class PaySlip < ApplicationRecord
   belongs_to :salary
+  has_many :days
 end

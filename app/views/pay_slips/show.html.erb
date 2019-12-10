@@ -13,9 +13,37 @@
 
     <h2>A calendar</h2>
     <%= month_calendar  do |date| %>
-      <%= date %>
+      <%= link_to date, new_salary_pay_slip_day_path(@salary, @pay_slip) %>
     <% end %>
   </div>
 </div>
 
+<!-- TODO : move this script to assets -->
 
+
+
+<script type="text/javascript" charset="utf-8">
+  // const previousMonthDays = document.querySelectorAll(".prev-month")
+  // const futureMonthDays = document.querySelectorAll(".next-month")
+
+  const days = Array.from(document.querySelectorAll(".current-month"));
+  // console.log(days);
+  // days.addEventListener(onclick, clickOnDayFunction);
+  days.forEach(day => day.addEventListener('click', handleClickOnDay));
+  function handleClickOnDay(e) {
+      console.log(e.target.innerText);
+  }
+
+
+
+
+
+
+
+  // function clickOnDayFunction(e){
+  //     const selectedDay = e.innerText ;
+  //     console.log(selectedDay);
+  // }
+
+
+</script>
