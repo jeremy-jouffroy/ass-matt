@@ -14,6 +14,7 @@ class Day < ApplicationRecord
   belongs_to :pay_slip
 
   validates :status, inclusion: { in: ["worked", "weekend", "paid-leave", "unpaid-leave", "stayed at home"],  message: "%{value} n'est pas un type de contract valide" }
+  validates_uniqueness_of :day_date, scope: :pay_slip_id,  message: "%{day_date} was already filled in for this pay slip"
 
 
 end

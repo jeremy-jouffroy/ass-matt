@@ -6,6 +6,7 @@ class DaysController < ApplicationController
   end
 
   def show
+    @day = Day.find(params[:id])
   end
 
   def new
@@ -13,7 +14,14 @@ class DaysController < ApplicationController
   end
 
   def create
-    @day = Day.new(dasy)
+    @day = Day.new(day_params)
+    @day.pay_slip = @pay_slip
+    if @day.save!
+        redirect_to salary_pay_slip_path(@salary, @pay_slip)
+    else
+      alert
+      render :new
+    end
   end
 
   def edit
@@ -36,6 +44,6 @@ class DaysController < ApplicationController
   end
 
   def day_params
-    params.require(:pay_slip).permit(:month,:salary_id)
+    params.require(:day).permit(:day_date, :status, :starting_hour, :ending_hour, :daily_meal)
   end
 end
