@@ -7,7 +7,10 @@
     <p>
       Salary : <%= @salary %> <br>
       Pay slip : <%= @pay_slip %><br>
-      Pay slip month 1st day: <%= @date %> of class <%= @date.class %> <br>
+      Pay slip month 1st day: <%= @pay_slip_first_day %> of class <%= @pay_slip_first_day.class %><br>
+      Pay slip month last day: <%= Date.new(@date.year, @date.month , -1 ) %> of class <%= @date.class %><br>
+
+
     </p>
 
 
