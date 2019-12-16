@@ -10,6 +10,7 @@
       Pay slip month 1st day: <%= @pay_slip_first_day %> of class <%= @pay_slip_first_day.class %><br>
       Pay slip month last day: <%= @pay_slip_last_day %> of class <%= @pay_slip_last_day.class %><br>
       All dates to consider this month :<br>
+<!--      TODO : inject this data into the calendar-->
       <% @this_month_days.each do |day| %>
         <%= day.status  %> On <%= day.day_date %>  from   <%= day.starting_hour %> till <%= day.ending_hour %> made <%= day.daily_meal %> meals </br>
     <%end %>
