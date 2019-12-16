@@ -1,0 +1,11 @@
+<h1>THIS IS A PARTIAL FORM</h1>
+<%= simple_form_for [@salary,@pay_slip,@day] do |f| %>
+  <%= f.error_notification  %>
+  <%= f.input :day_date,  as: :hidden%>
+  # if I am in edit then I pick the default value
+  <%= f.input :status, collection: ["worked", "weekend", "paid-leave", "unpaid-leave", "stayed at home"], default: @day.status %>
+  <%= f.input :starting_hour,  placeholder: @salary.starting_hour, default: @salary.starting_hour %>
+  <%= f.input :ending_hour, placeholder: @salary.ending_hour, default: @salary.ending_hour  %>
+  <%= f.input :daily_meal, placeholder: @salary.daily_meals, default: @salary.daily_meals, input_html: { value: @salary.daily_meals } %>
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>

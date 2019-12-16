@@ -1,2 +1,24 @@
 <h1>Days#edit</h1>
 <p>Find me in app/views/days/edit.html.erb</p>
+<%#= simple_form_for [@salary,@pay_slip,@day] do |f| %>
+  <%#= f.error_notification  %>
+  <%#= f.input :day_date, input_html: { value: @day.day_date },  as: :hidden%>
+  <%#= f.input :status, collection: ["worked", "weekend", "paid-leave", "unpaid-leave", "stayed at home"], default: "worked"%>
+  <%#= f.input :starting_hour,  placeholder: @salary.starting_hour, default: @salary.starting_hour %>
+  <%#= f.input :ending_hour, placeholder: @salary.ending_hour, default: @salary.ending_hour  %>
+  <%#= f.input :daily_meal, placeholder: @salary.daily_meals, default: @salary.daily_meals, input_html: { value: @salary.daily_meals } %>
+  <%#= f.button :submit, class: "btn-primary" %>
+<%# end %>
+
+
+
+<%= @day.day_date %><br>
+<%= @day.pay_slip %><br>
+<%= @day.status %><br>
+<%= @day.starting_hour %><br>
+<%= @day.ending_hour %><br>
+<%= @day.daily_meal %><br>
+<%= @day.created_at %><br>
+<%= @day.updated_at %><br>
+
+<%= render 'form_day' %>

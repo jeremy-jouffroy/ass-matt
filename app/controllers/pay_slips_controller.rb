@@ -10,7 +10,8 @@ class PaySlipsController < ApplicationController
   def show
     @pay_slip = PaySlip.find(params[:id])
     @pay_slip_first_day = @pay_slip.month.to_date
-    @pay_slip_last_day = Date.new(@pay_slip_first_day.year, @pay_slip_first_day.month, -1)
+    @pay_slip_last_day = end_of_month(@pay_slip_first_day)
+    @this_month_days = month_date_array(@pay_slip_first_day, @pay_slip_last_day)
   end
 
   def new
@@ -45,4 +46,20 @@ class PaySlipsController < ApplicationController
   def pay_slip_params
     params.require(:pay_slip).permit(:month,:salary_id)
   end
+
+  def end_of_month(beginning_of_the_month)
+    return Date.new(beginning_of_the_month.year, beginning_of_the_month.month, -1)
+  end
+
+  # TODO create an array of all possible date in the array bewteen  @pay_slip_first_day & @pay_slip_last_day
+  def month_date_array(date_begin, date_end)
+    days = []
+    date_begin.step(date_end).each{|d| days.push(d)}
+    return days
+  end
+
+
+  # TODO for each element of the @days array create a Day class element that, depending on it weekday takes the default parameters defined in the salary
+
+
 end

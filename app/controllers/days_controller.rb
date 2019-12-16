@@ -25,9 +25,13 @@ class DaysController < ApplicationController
   end
 
   def edit
+    @day = Day.find(params[:id])
   end
 
   def update
+    @day = Day.find(params[:id])
+    @day.update(day_params)
+    redirect_to salary_pay_slip_path(@salary,@pay_slip)
   end
 
   def destroy
