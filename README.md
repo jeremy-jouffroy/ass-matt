@@ -48,3 +48,7 @@ https://github.com/nhn/tui.jsdoc-template
 
 
 ## testing 
+set a .env file at the root of the project following the model provided in 
+.example_env
+
+
