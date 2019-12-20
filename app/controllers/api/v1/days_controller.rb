@@ -1,4 +1,4 @@
-class DaysController < ApplicationController
+class Api::V1::DaysController < Api::V1::BaseController
   before_action :authenticate_user!
   before_action :set_pay_slip, :set_salary_setup
 
