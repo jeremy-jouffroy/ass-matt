@@ -3,6 +3,7 @@ class DaysController < ApplicationController
   before_action :set_pay_slip, :set_salary_setup
 
   def index
+    @days = Day.where(pay_slip_id: @pay_slip)
   end
 
   def show
