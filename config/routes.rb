@@ -13,4 +13,16 @@ Rails.application.routes.draw do
       resources :days
     end
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :salaries do
+        resources :pay_slips do
+          resources :days, only: [:index]
+        end
+      end
+    end
+  end
+
+
 end
